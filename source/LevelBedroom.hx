@@ -19,7 +19,7 @@ class LevelBedroom extends LevelState
 {
 	override public function create()
 	{
-		nextLevel = LevelTutorial;
+		nextLevel = LevelLivingroom;
 		createLevel("Bedroom");
 		FlxG.camera.fade(FlxColor.BLACK, 1, true);
 		FlxG.camera.setScale(500, 500);

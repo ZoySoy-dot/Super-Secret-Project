@@ -9,7 +9,7 @@ import openfl.display.Sprite;
 
 class Main extends Sprite
 {
-	var ver = 0.17;
+	var ver = 0.19;
 
 	public function new()
 	{

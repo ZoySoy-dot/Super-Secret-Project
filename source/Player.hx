@@ -8,7 +8,7 @@ import flixel.util.FlxColor;
 
 class Player extends FlxSprite
 {
-	var SPEED:Float = 75;
+	var SPEED:Float = 50;
 
 	function updateMovement()
 	{
@@ -16,19 +16,12 @@ class Player extends FlxSprite
 		var down:Bool = false;
 		var left:Bool = false;
 		var right:Bool = false;
-		var sprinting:Bool = false;
-		var canMove:Bool = false;
 
-		up = FlxG.keys.anyPressed([UP, W]);
-		down = FlxG.keys.anyPressed([DOWN, S]);
-		left = FlxG.keys.anyPressed([LEFT, A]);
-		right = FlxG.keys.anyPressed([RIGHT, D]);
-		sprinting = FlxG.keys.anyPressed([SHIFT]);
+		up = FlxG.keys.anyPressed([W]);
+		down = FlxG.keys.anyPressed([S]);
+		left = FlxG.keys.anyPressed([A]);
+		right = FlxG.keys.anyPressed([ D]);
 
-		if (sprinting)
-			SPEED = 150;
-		else
-			SPEED = 75;
 		if (up && down)
 			up = down = false;
 		if (left && right)
@@ -100,13 +93,13 @@ class Player extends FlxSprite
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
 
-		animation.add('d', [0, 1, 2, 3], 4, false);
+		animation.add('d', [0, 1, 2, 3], 2, false);
 		animation.add("lr", [4, 5, 6, 7], 4, false);
-		animation.add("u", [8, 9, 10, 11], 4, false);
+		animation.add("u", [8, 9, 10, 11], 2, false);
 
-		animation.add("dLooped", [0, 1, 2, 3], 4, true);
-		animation.add("lrLooped", [4, 5, 6, 7], 4, true);
-		animation.add("uLooped", [8, 9, 10, 11], 4, true);
+		animation.add("dLooped", [0, 1, 2, 3], 2, true);
+		animation.add("lrLooped", [4, 5, 6, 7], 2, true);
+		animation.add("uLooped", [8, 9, 10, 11], 2, true);
 
 		drag.x = drag.y = 1600;
 		setSize(10, 1);
