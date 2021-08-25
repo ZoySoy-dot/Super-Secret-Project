@@ -9,12 +9,12 @@ import openfl.display.Sprite;
 
 class Main extends Sprite
 {
-	var ver = 0.19;
+	var ver = 0.20 + "b";
 
 	public function new()
 	{
 		super();
-		addChild(new FlxGame(1280, 720, MenuState, 100, 60, 60));
+		addChild(new FlxGame(1280, 720, MenuState, 100, 60, 60, false));
 
 		var sprite = new FlxSprite();
 		sprite.loadGraphic(AssetPaths.Cursor__png, true, 32, 32);

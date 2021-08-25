@@ -1,5 +1,6 @@
 package;
 
+import levelstuff.LevelTutorial;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;

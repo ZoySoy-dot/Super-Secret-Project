@@ -1,7 +1,7 @@
-package;
+package levelstuff;
 
 
-import LevelState.Layers;
+import levelstuff.LevelState.Layers;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;

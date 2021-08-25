@@ -1,4 +1,4 @@
-package;
+package levelstuff;
 
 import OptionsSubState;
 import flixel.FlxG;

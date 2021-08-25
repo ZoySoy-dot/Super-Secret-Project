@@ -4,7 +4,6 @@ import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.math.FlxPoint;
-import flixel.util.FlxColor;
 
 class Player extends FlxSprite
 {
@@ -20,7 +19,7 @@ class Player extends FlxSprite
 		up = FlxG.keys.anyPressed([W]);
 		down = FlxG.keys.anyPressed([S]);
 		left = FlxG.keys.anyPressed([A]);
-		right = FlxG.keys.anyPressed([ D]);
+		right = FlxG.keys.anyPressed([D]);
 
 		if (up && down)
 			up = down = false;
@@ -102,7 +101,7 @@ class Player extends FlxSprite
 		animation.add("uLooped", [8, 9, 10, 11], 2, true);
 
 		drag.x = drag.y = 1600;
-		setSize(10, 1);
+		setSize(12, 1);
 		offset.set(11, 30);
 	}
 
