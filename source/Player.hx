@@ -7,7 +7,7 @@ import flixel.math.FlxPoint;
 
 class Player extends FlxSprite
 {
-	var SPEED:Float = 50;
+	var SPEED:Float = 70;
 
 	function updateMovement()
 	{
@@ -92,9 +92,9 @@ class Player extends FlxSprite
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
 
-		animation.add('d', [0, 1, 2, 3], 2, false);
-		animation.add("lr", [4, 5, 6, 7], 4, false);
-		animation.add("u", [8, 9, 10, 11], 2, false);
+		animation.add('d', [0, 1, 2, 3], 4, false);
+		animation.add("lr", [4, 5, 6, 7], 5, false);
+		animation.add("u", [8, 9, 10, 11], 4, false);
 
 		animation.add("dLooped", [0, 1, 2, 3], 2, true);
 		animation.add("lrLooped", [4, 5, 6, 7], 2, true);

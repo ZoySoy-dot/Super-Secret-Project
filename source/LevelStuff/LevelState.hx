@@ -23,8 +23,7 @@ class LevelState extends FlxState
 	var layers:Map<Layers, FlxTilemap>;
 	var nextLevel:Class<LevelState>;
 	var prevLevel:Class<LevelState>;
-	var Dialogue:Array<String>;
-
+	var dialogue:FlxText;
 	public function createLevel(levelName:String)
 	{
 		// AssetPaths
@@ -41,12 +40,14 @@ class LevelState extends FlxState
 			layers[DETAIL] = map.loadTilemap(tutorialTileset, "Detail");
 			layers[NEXTLEVEL] = map.loadTilemap(tutorialTileset, "NextLevel");
 			layers[PREVLEVEL] = map.loadTilemap(tutorialTileset, "PrevLevel");
+			
 
 			add(layers[NEXTLEVEL]);
 			add(layers[FLOOR]);
 			add(layers[WALL]);
 			add(layers[FURNITURE]);
 			add(layers[DETAIL]);
+			
 
 			player = new Player(247, 82);
 			add(player);
@@ -110,8 +111,30 @@ class LevelState extends FlxState
 
 	override public function update(elapsed:Float)
 	{
-		FlxG.collide(player, layers[WALL]);
-		FlxG.collide(player, layers[FURNITURE]);
+		
+		collision();
+		loadLevel();
+		openOptions();
+	
+
+		
+	
+		super.update(elapsed);
+	}
+
+
+	function loadLevel()
+	{
+		if (FlxG.collide(player, layers[NEXTLEVEL]))
+		{
+			FlxG.switchState(Type.createInstance(nextLevel, []));
+		}
+		else if (FlxG.collide(player, layers[PREVLEVEL]))
+		{
+			FlxG.switchState(Type.createInstance(prevLevel, []));
+		}
+	}
+	function openOptions() {
 		Reg.optionsKey = FlxG.keys.anyJustPressed([ESCAPE]);
 		if (Reg.optionsKey)
 		{
@@ -119,18 +142,9 @@ class LevelState extends FlxState
 			var optionsState = new OptionsSubState();
 			openSubState(optionsState);
 		}
-
-		// Load next State
-		Reg.useKey = FlxG.keys.anyJustPressed([E]);
-		if (FlxG.collide(player, layers[NEXTLEVEL]))
-		{
-			FlxG.switchState(Type.createInstance(nextLevel, []));
-		}
-		super.update(elapsed);
-		if (FlxG.collide(player, layers[PREVLEVEL]))
-		{
-			FlxG.switchState(Type.createInstance(prevLevel, []));
-		}
-		super.update(elapsed);
+	}
+	function collision() {
+		FlxG.collide(player, layers[WALL]);
+		FlxG.collide(player, layers[FURNITURE]);
 	}
 }

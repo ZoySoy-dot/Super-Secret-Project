@@ -1,6 +1,6 @@
 package;
 
-import levelstuff.LevelTutorial;
+import flixel.system.FlxAssets;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -10,12 +10,13 @@ import flixel.text.FlxText;
 import flixel.tile.FlxTilemap;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
+import levelstuff.LevelTutorial;
 import openfl.display.Tilemap;
 
 class MenuState extends FlxState
 {
 	var playButton:FlxButton;
-	var title:FlxText;
+	var titleText:FlxSprite;
 	var playKey:Bool = false;
 
 	function clickPlay()
@@ -40,12 +41,14 @@ class MenuState extends FlxState
 		sprite.screenCenter();
 		add(sprite);
 
+		FlxAssets.FONT_DEFAULT = AssetPaths.FFFFORWA__TTF;
+		titleText = new FlxText(20, 0, 0, "Iya's Love", 40);
+		titleText.screenCenter(X);
+		add(titleText);
+
 		playButton = new FlxButton(0, 0, "", clickPlay);
 		playButton.loadGraphic(AssetPaths.Menu_Play__png);
-		title = new FlxText(0, 0, 300, "", 1000);
-		title.setFormat(null, 16, FlxColor.WHITE, CENTER);
 
-		add(title);
 		add(playButton);
 		playButton.screenCenter();
 	}

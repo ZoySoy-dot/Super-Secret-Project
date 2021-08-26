@@ -4,11 +4,6 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxSubState;
 import flixel.ui.FlxButton;
-import flixel.util.FlxAxes;
-import flixel.util.FlxColor;
-import flixel.util.FlxColor;
-import lime.utils.Assets;
-import openfl.display.Sprite;
 
 using flixel.util.FlxSpriteUtil;
 
@@ -28,10 +23,14 @@ class OptionsSubState extends FlxSubState
 		super(0x61000000);
 	}
 
-	public function continueGame()
+	public function closeOptions()
 	{
-		close();
-		FlxG.mouse.visible = false;
+		Reg.optionsKey = FlxG.keys.anyJustPressed([ESCAPE]);
+		if (Reg.optionsKey)
+		{
+			close();
+			trace("Options menu is closed: " + Reg.optionsKey);
+		}
 	}
 
 	public function exitGame()
@@ -48,7 +47,7 @@ class OptionsSubState extends FlxSubState
 		add(box);
 
 		choices = new Map();
-		choices[CONTINUE] = new FlxButton(0, box.y + 30, continueGame);
+		choices[CONTINUE] = new FlxButton(0, box.y + 30, closeOptions);
 		choices[CONTINUE].loadGraphic(AssetPaths.Options_Continue__png);
 		choices[CONTINUE].screenCenter(X);
 
@@ -64,12 +63,6 @@ class OptionsSubState extends FlxSubState
 	{
 		super.update(elapsed);
 
-		// Options
-		Reg.optionsKey = FlxG.keys.anyJustPressed([ESCAPE]);
-		if (Reg.optionsKey)
-		{
-			close();
-			trace("Options menu is closed: " + Reg.optionsKey);
-		}
+		closeOptions();
 	}
 }
