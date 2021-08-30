@@ -1,4 +1,4 @@
-A haxeflixel game made for your girlfriend ("Isabella Nicole Dyankgo");
+A haxeflixel game made for your girlfriend ("Iya");
 
 Lore:
 
