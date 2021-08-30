@@ -1,7 +1,5 @@
-package levelstuff;
+package levels;
 
-
-import levelstuff.LevelState.Layers;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
@@ -16,16 +14,12 @@ import flixel.util.FlxColor;
 import flixel.util.FlxSave;
 import haxe.rtti.CType.Rights;
 
-
-class LevelTutorial extends LevelState
+class LevelBedroom extends LevelState
 {
-	
 	override public function create()
 	{
-		nextLevel = LevelBedroom;
-		createLevel("Tutorial");
-		FlxG.mouse.visible = false;
-
+		nextLevel = LevelLivingroom;
+		createLevel("Bedroom");
 		FlxG.camera.fade(FlxColor.BLACK, 1, true);
 		FlxG.camera.setScale(500, 500);
 		FlxG.camera.follow(player, LOCKON, 1);
@@ -33,9 +27,6 @@ class LevelTutorial extends LevelState
 
 	override public function update(elapsed:Float)
 	{
-		// Options
-
-
 		super.update(elapsed);
 	}
 }

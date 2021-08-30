@@ -1,4 +1,4 @@
-package levelstuff;
+package levels;
 
 import flixel.util.FlxColor;
 import flixel.FlxG;

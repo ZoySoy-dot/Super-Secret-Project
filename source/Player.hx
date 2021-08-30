@@ -7,10 +7,12 @@ import flixel.math.FlxPoint;
 
 class Player extends FlxSprite
 {
-	var SPEED:Float = 70;
+	
 
 	function updateMovement()
 	{
+		var SPEED:Float = 70;
+		
 		var up:Bool = false;
 		var down:Bool = false;
 		var left:Bool = false;

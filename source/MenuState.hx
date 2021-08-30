@@ -10,7 +10,7 @@ import flixel.text.FlxText;
 import flixel.tile.FlxTilemap;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
-import levelstuff.LevelTutorial;
+import levels.LevelTutorial;
 import openfl.display.Tilemap;
 
 class MenuState extends FlxState

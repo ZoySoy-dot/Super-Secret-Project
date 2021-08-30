@@ -1,5 +1,6 @@
-package levelstuff;
+package levels;
 
+import substates.OptionsSubState;
 import flixel.FlxG;
 import flixel.FlxState;
 import flixel.addons.editors.ogmo.FlxOgmo3Loader;
@@ -115,10 +116,10 @@ class LevelState extends FlxState
 		collision();
 		loadLevel();
 		openOptions();
-	
+		
 
 		
-	
+		
 		super.update(elapsed);
 	}
 
