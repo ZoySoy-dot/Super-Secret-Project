@@ -19,7 +19,11 @@ class Main extends Sprite
 	{
 		super();
 		addChild(new FlxGame(1280, 720, MenuState, 100, 60, 60, false));
+<<<<<<< Updated upstream
 		
+=======
+		trace("please help");
+>>>>>>> Stashed changes
 		trace("Game ver " + ver);
 		DiscordClient.initialize();
 		FlxG.autoPause = false;
