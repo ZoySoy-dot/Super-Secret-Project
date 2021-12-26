@@ -1,0 +1,124 @@
+{
+  "name": "Iya's game",
+  "ogmoVersion": "3.4.0",
+  "levelPaths": ["."],
+  "backgroundColor": "#282c34ff",
+  "gridColor": "#3c4049cc",
+  "anglesRadians": true,
+  "directoryDepth": 5,
+  "layerGridDefaultSize": {"x": 8, "y": 8},
+  "levelDefaultSize": {"x": 320, "y": 240},
+  "levelMinSize": {"x": 1280, "y": 720},
+  "levelMaxSize": {"x": 4096, "y": 4096},
+  "levelValues": [],
+  "defaultExportMode": ".json",
+  "compactExport": false,
+  "externalScript": "",
+  "playCommand": "",
+  "entityTags": [],
+  "layers": [
+    {
+      "definition": "entity",
+      "name": "entities",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "26970508",
+      "requiredTags": [],
+      "excludedTags": []
+    },
+    {
+      "definition": "tile",
+      "name": "prevDoor",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "27650464",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": "House"
+    },
+    {
+      "definition": "tile",
+      "name": "nextDoor",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "27628122",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": "House"
+    },
+    {
+      "definition": "tile",
+      "name": "Design",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "27622668",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": "House"
+    },
+    {
+      "definition": "tile",
+      "name": "Furniture",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "27623179",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": "House"
+    },
+    {
+      "definition": "tile",
+      "name": "Floor",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "27619964",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": "House"
+    },
+    {
+      "definition": "tile",
+      "name": "Wall",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "27623068",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": "House"
+    }
+  ],
+  "entities": [
+    {
+      "exportID": "26964962",
+      "name": "player",
+      "limit": -1,
+      "size": {"x": 16, "y": 16},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": [],
+      "values": []
+    }
+  ],
+  "tilesets": [
+    {"label": "House", "path": "../images/Tilemaps/HouseTilesheet.png", "image": "data:image/png;base64,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", "tileWidth": 8, "tileHeight": 8, "tileSeparationX": 0, "tileSeparationY": 0, "tileMarginX": 0, "tileMarginY": 0}
+  ]
+}

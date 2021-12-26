@@ -1,37 +1,29 @@
 package;
 
-import openfl.ui.MouseCursor;
-import Discord.DiscordClient;
 import flixel.FlxG;
 import flixel.FlxGame;
 import flixel.FlxSprite;
-import flixel.FlxState;
-import flixel.system.debug.stats.Stats;
-import flixel.util.FlxColor;
+import menus.MainMenu;
 import openfl.display.Sprite;
+#if cpp
 
-class Main extends Sprite
-{
-	var ver = 0.21 + "a";
-	
+#end
 
-	public function new()
-	{
+class Main extends Sprite {
+	var ver = 0.23 + "e";
+
+	public function new() {
 		super();
-		addChild(new FlxGame(1280, 720, MenuState, 100, 60, 60, false));
-<<<<<<< Updated upstream
-		
-=======
-		trace("please help");
->>>>>>> Stashed changes
+		addChild(new FlxGame(1280, 720, MainMenu, 100, 60, 60, true));
+
 		trace("Game ver " + ver);
-		DiscordClient.initialize();
+		#if cpp
+		DiscordClient.start();
+		#end
 		FlxG.autoPause = false;
-		
-		
+
 		var mouseCursor = new FlxSprite();
-		mouseCursor.loadGraphic(AssetPaths.Cursor__png, true, 32, 32);
+		mouseCursor.loadGraphic(Paths.Cursor__png, true, 32, 32);
 		FlxG.mouse.load(mouseCursor.pixels, 1);
-		
 	}
 }
