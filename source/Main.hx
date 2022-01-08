@@ -5,9 +5,7 @@ import flixel.FlxGame;
 import flixel.FlxSprite;
 import menus.MainMenu;
 import openfl.display.Sprite;
-#if cpp
 
-#end
 
 class Main extends Sprite {
 	var ver = 0.23 + "e";
@@ -17,9 +15,6 @@ class Main extends Sprite {
 		addChild(new FlxGame(1280, 720, MainMenu, 100, 60, 60, true));
 
 		trace("Game ver " + ver);
-		#if cpp
-		DiscordClient.start();
-		#end
 		FlxG.autoPause = false;
 
 		var mouseCursor = new FlxSprite();

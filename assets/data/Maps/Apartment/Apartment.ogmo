@@ -1,0 +1,106 @@
+{
+  "name": "Apartment",
+  "ogmoVersion": "3.4.0",
+  "levelPaths": ["."],
+  "backgroundColor": "#282c34ff",
+  "gridColor": "#3c4049cc",
+  "anglesRadians": true,
+  "directoryDepth": 10,
+  "layerGridDefaultSize": {"x": 8, "y": 8},
+  "levelDefaultSize": {"x": 320, "y": 240},
+  "levelMinSize": {"x": 128, "y": 128},
+  "levelMaxSize": {"x": 4096, "y": 4096},
+  "levelValues": [],
+  "defaultExportMode": ".json",
+  "compactExport": false,
+  "externalScript": "",
+  "playCommand": "",
+  "entityTags": [],
+  "layers": [
+    {
+      "definition": "entity",
+      "name": "Entities",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "38271070",
+      "requiredTags": [],
+      "excludedTags": []
+    },
+    {
+      "definition": "tile",
+      "name": "InteractableFurniture",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "52145211",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": "Apartment"
+    },
+    {
+      "definition": "tile",
+      "name": "Furniture",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "38283259",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": ""
+    },
+    {
+      "definition": "tile",
+      "name": "Wall",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "38287321",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": ""
+    },
+    {
+      "definition": "tile",
+      "name": "Floor",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "38281597",
+      "exportMode": 0,
+      "arrayMode": 0,
+      "defaultTileset": "Apartment"
+    }
+  ],
+  "entities": [
+    {
+      "exportID": "38287141",
+      "name": "iya",
+      "limit": -1,
+      "size": {"x": 16, "y": 16},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": [],
+      "values": []
+    }
+  ],
+  "tilesets": [
+    {"label": "Apartment", "path": "../../../images/Tilemaps/HouseTilesheet.png", "image": "data:image/png;base64,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", "tileWidth": 8, "tileHeight": 8, "tileSeparationX": 0, "tileSeparationY": 0, "tileMarginX": 0, "tileMarginY": 0}
+  ]
+}

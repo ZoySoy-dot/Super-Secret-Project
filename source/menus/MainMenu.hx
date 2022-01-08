@@ -1,6 +1,6 @@
 package menus;
 
-import levelstuff.levels.apartment.StartBedroom;
+import levels.apartment.Bedroom;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -8,7 +8,6 @@ import flixel.system.FlxAssets;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
-import levelstuff.levels.apartment.Bedroom;
 
 class MainMenu extends FlxState {
 	var playButton:FlxButton;
@@ -16,10 +15,7 @@ class MainMenu extends FlxState {
 	var playKey:Bool = false;
 
 	override public function create() {
-
-		
-
-		titleText = new FlxText(20, 0, 0, "Iya's Game!", 40);
+		titleText = new FlxText(20, 0, 0, "PaoPao", 40);
 		titleText.screenCenter(X);
 		add(titleText);
 
@@ -40,7 +36,8 @@ class MainMenu extends FlxState {
 	}
 
 	function clickPlay() {
-		FlxG.switchState(new StartBedroom());
+		FlxG.switchState(new Bedroom());
 		FlxG.camera.fade(FlxColor.WHITE, 1, false);
+		
 	}
 }

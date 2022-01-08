@@ -20,6 +20,7 @@ class Iya extends FlxSprite {
 		left = FlxG.keys.anyPressed([A, LEFT]);
 		right = FlxG.keys.anyPressed([D, RIGHT]);
 
+		
 		if (up && down)
 			up = down = false;
 		if (left && right)
