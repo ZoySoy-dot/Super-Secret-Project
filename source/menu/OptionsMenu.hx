@@ -1,10 +1,10 @@
-package menus;
+package menu;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxSubState;
 import flixel.text.FlxText;
-import menus.MainMenu;
+import menu.MainMenu;
 
 using flixel.util.FlxSpriteUtil;
 
@@ -13,7 +13,7 @@ enum Choice {
 	EXIT;
 }
 
-class OptionsSubState extends FlxSubState {
+class OptionsMenu extends FlxSubState {
 	var box:FlxSprite;
 
 	var pointer:FlxSprite;

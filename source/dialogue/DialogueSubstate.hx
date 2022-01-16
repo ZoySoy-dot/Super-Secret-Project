@@ -7,11 +7,11 @@ import flixel.FlxSubState;
 import flixel.system.FlxAssets;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import levels.LevelCreation;
+import level.LevelCreation;
 import lime.utils.Assets;
 import openfl.text.TextField;
 
-class DialogueBox extends FlxSubState {
+class DialogueSubstate extends FlxSubState {
 	var dialogueBox:FlxSprite;
 	var dialogueText:FlxText;
 	public static var dialogueFile:Array<String>;

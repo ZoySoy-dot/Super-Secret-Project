@@ -1,6 +1,6 @@
-package menus;
+package menu;
 
-import levels.apartment.Bedroom;
+import level.apartment.Bedroom;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;

@@ -55,7 +55,7 @@ class Iya extends FlxSprite {
 			velocity.rotate(FlxPoint.weak(0, 0), newAngle);
 			
 
-			if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE) {
+			if ((velocity.x != 0 || velocity.y != 0)) {
 				switch (facing) {
 					case LEFT, RIGHT:
 						animation.play("lr");

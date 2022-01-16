@@ -3,7 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxGame;
 import flixel.FlxSprite;
-import menus.MainMenu;
+import menu.MainMenu;
 import openfl.display.Sprite;
 
 
