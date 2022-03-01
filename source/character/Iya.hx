@@ -89,7 +89,7 @@ class Iya extends FlxSprite {
 
 		drag.x = drag.y = 1600;
 		setSize(13, 6);
-		offset.set(3, 19);
+		offset.set(2, 19);
 	}
 
 	override function update(elapsed:Float) {

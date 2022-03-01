@@ -1,5 +1,6 @@
 package menu;
 
+import level.outside.Outside0;
 import level.apartment.Bedroom;
 import flixel.FlxG;
 import flixel.FlxSprite;

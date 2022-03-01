@@ -1,23 +1,29 @@
 package level.apartment;
 
-import character.Iya;
+import openfl.utils.Assets;
 import dialogue.DialogueSubstate;
 import flixel.FlxG;
-import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
-import lime.utils.Assets;
 
 class Livingroom extends LevelCreation {
 	
 	override public function create() {
 		createLevel("Apartment", "Livingroom");
-		FlxG.camera.follow(player, LOCKON, 2);
-		FlxG.camera.fade(FlxColor.BLACK, 1, true);
-		FlxG.camera.setScale(400, 400);
-		
+	
+		prevLevel = Bedroom;
+		bathroomLevel = Bathroom;
+		nextLevel = Hallway;
 	}
 
 	override public function update(elapsed:Float) {
+		if (FlxG.collide(player, chochi) && FlxG.keys.anyJustPressed([E])) {
+			var randomizer = FlxG.random.int(0, 6);
+			DialogueSubstate.dialogueFile = Assets.getText('assets/data/Dialogue/NPC/Chochi/$randomizer.txt').split("||");
+			DialogueSubstate.person1 = "Chochi";
+
+			openSubState(new DialogueSubstate());
+		}
 		super.update(elapsed);
+		
 	}
 }
