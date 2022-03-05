@@ -8,7 +8,7 @@ import openfl.display.Sprite;
 
 
 class Main extends Sprite {
-	var ver = 0.23 + "e";
+	var ver = "Pre-Alpha" + "1";
 
 	public function new() {
 		super();
