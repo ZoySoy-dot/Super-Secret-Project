@@ -11,13 +11,17 @@ class Outside0 extends LevelCreation {
 
 	override public function update(elapsed:Float) {
 		FlxG.collide(player, building);
-		super.update(elapsed);
-		if (FlxG.collide(player,car)) {
-			car.velocity.y = 0;
+
+		if (FlxG.collide(player, car)) {
+			player.x -= (car.width - 20);
 		}
+
 		if (!car.alive) {
 			car.revive();
 			car.setPosition(208, 10);
 		}
+		
+
+		super.update(elapsed);
 	}
 }

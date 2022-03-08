@@ -6,7 +6,10 @@ import flixel.FlxSprite;
 import flixel.math.FlxPoint;
 import haxe.Timer;
 
-class Iya extends FlxSprite {
+class Player extends FlxSprite {
+	var idleTimer = new haxe.Timer(6000);
+	var idleTimerDone = false;
+
 	function updateMovement() {
 		var SPEED:Float = 40;
 		var newAngle:Float = 0;
@@ -14,18 +17,17 @@ class Iya extends FlxSprite {
 		var down:Bool = false;
 		var left:Bool = false;
 		var right:Bool = false;
-		
+
 		up = FlxG.keys.anyPressed([W, UP]);
 		down = FlxG.keys.anyPressed([S, DOWN]);
 		left = FlxG.keys.anyPressed([A, LEFT]);
 		right = FlxG.keys.anyPressed([D, RIGHT]);
 
-		
 		if (up && down)
 			up = down = false;
 		if (left && right)
 			left = right = false;
-		 
+
 		if (up || down || left || right) {
 			velocity.x = SPEED;
 			velocity.y = SPEED;
@@ -53,7 +55,6 @@ class Iya extends FlxSprite {
 
 			velocity.set(SPEED, 0);
 			velocity.rotate(FlxPoint.weak(0, 0), newAngle);
-			
 
 			if ((velocity.x != 0 || velocity.y != 0)) {
 				switch (facing) {
@@ -80,7 +81,7 @@ class Iya extends FlxSprite {
 		animation.add('d', [1, 2, 3, 4, 5, 6], 7, false);
 		animation.add("u", [9, 10, 11, 12, 13, 14], 7, false);
 		animation.add("lr", [16, 17, 18, 19, 20, 21], 7, false);
-		animation.add("idle", [22, 23, 24, 25], 4, false);
+		animation.add("idle", [22, 23, 24, 25], 4, true);
 
 		animation.add("dLooped", [1, 2, 3, 4, 5, 6,], 3, true);
 		animation.add("lLooped", [15, 16, 17, 18, 19, 20], 3, true);
@@ -94,6 +95,13 @@ class Iya extends FlxSprite {
 
 	override function update(elapsed:Float) {
 		updateMovement();
+		if (!FlxG.keys.anyJustPressed([W, A, S, D])) {
+			trace(idleTimer);
+			idleTimer.run = function name() {
+				animation.play("idle");
+				idleTimer.stop;
+			}
+		}
 		super.update(elapsed);
 	}
 }

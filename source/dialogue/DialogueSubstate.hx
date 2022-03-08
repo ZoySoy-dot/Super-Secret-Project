@@ -1,6 +1,6 @@
 package dialogue;
 
-import character.Iya;
+import character.Player;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxSubState;
@@ -14,7 +14,9 @@ import openfl.text.TextField;
 class DialogueSubstate extends FlxSubState {
 	var dialogueBox:FlxSprite;
 	var dialogueText:FlxText;
+
 	public static var dialogueFile:Array<String>;
+
 	var i:Int;
 	var text:String;
 
@@ -28,12 +30,9 @@ class DialogueSubstate extends FlxSubState {
 		super(0x61000000);
 	}
 
-
-
 	override public function create() {
 		super.create();
 		text = dialogueFile[i++];
-		
 
 		dialogueBox = new FlxSprite(515, 380).makeGraphic(250, 50, FlxColor.WHITE);
 		dialogueBox.scrollFactor.set(0, 0);

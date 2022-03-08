@@ -37,7 +37,7 @@ class MainMenu extends FlxState {
 	}
 
 	function clickPlay() {
-		FlxG.switchState(new Bedroom());
+		FlxG.switchState(new Outside0());
 		FlxG.camera.fade(FlxColor.WHITE, 1, false);
 		
 	}
