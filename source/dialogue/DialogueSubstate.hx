@@ -33,6 +33,7 @@ class DialogueSubstate extends FlxSubState {
 	override public function create() {
 		super.create();
 		text = dialogueFile[i++];
+		
 
 		dialogueBox = new FlxSprite(515, 380).makeGraphic(250, 50, FlxColor.WHITE);
 		dialogueBox.scrollFactor.set(0, 0);

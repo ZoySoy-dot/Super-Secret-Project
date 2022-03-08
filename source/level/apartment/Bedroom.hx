@@ -16,7 +16,6 @@ class Bedroom extends LevelCreation {
 
 	override public function create() {
 		createLevel("Apartment", "Bedroom");
-
 		nextLevel = Livingroom;
 	}
 
@@ -29,7 +28,6 @@ class Bedroom extends LevelCreation {
 			hasChanged = true;
 
 		}*/
-
 		if (FlxG.collide(player, chochi) && FlxG.keys.anyJustPressed([E])) {
 			var randomizer = FlxG.random.int(0, 6);
 			DialogueSubstate.dialogueFile = Assets.getText('assets/data/Dialogue/NPC/Chochi/$randomizer.txt').split("||");

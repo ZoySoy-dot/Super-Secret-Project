@@ -1,7 +1,7 @@
 package level;
 
-import character.Player;
 import character.npc.Car;
+import menu.OptionsMenu;
 import character.npc.Chochi;
 import dialogue.DialogueSubstate;
 import flixel.FlxG;
@@ -18,18 +18,18 @@ class LevelCreation extends FlxState {
 	var bathroomLevel:Class<LevelCreation>;
 
 	public var chochi:Chochi;
-	public var player:Player;
+	public var player:Iya;
 	public var car:Car;
-
+	
 	var map:FlxOgmo3Loader;
-
+	
 	var wall:FlxTilemap;
 	var floor:FlxTilemap;
 	var next:FlxTilemap;
 	var prev:FlxTilemap;
 	var furniture:FlxTilemap;
 	var building:FlxTilemap;
-
+	
 	var bathroom:FlxTilemap;
 	var closet:FlxTilemap;
 
@@ -114,17 +114,19 @@ class LevelCreation extends FlxState {
 					add(next);
 					add(player);
 			}
-		}
-		if (level == "Outside") {
+
+			
+		}if(level == "Outside"){
 			wall = map.loadTilemap(Paths.OutsideTilesheet__png, "Wall");
 			building = map.loadTilemap(Paths.OutsideTilesheet__png, "Building");
 			floor = map.loadTilemap(Paths.OutsideTilesheet__png, "Floor");
 			next = map.loadTilemap(Paths.OutsideTilesheet__png, "Next");
 			prev = map.loadTilemap(Paths.OutsideTilesheet__png, "Prev");
-
-			switch levelname {
+			
+			switch levelname{
 				case "Outside0":
-					map.loadEntities(placeEntities, "Entities");
+					
+				map.loadEntities(placeEntities, "Entities");
 					add(building);
 					add(floor);
 					add(wall);
@@ -132,13 +134,12 @@ class LevelCreation extends FlxState {
 					add(prev);
 					add(car);
 					add(player);
+
 			}
 		}
 		FlxG.camera.follow(player, LOCKON, 2);
 		FlxG.camera.fade(FlxColor.BLACK, 1, true);
 		FlxG.camera.setScale(400, 400);
-		FlxG.camera.antialiasing = true;
-		
 	}
 
 	function collision() {
@@ -146,7 +147,7 @@ class LevelCreation extends FlxState {
 		FlxG.collide(player, furniture);
 		FlxG.collide(chochi, wall);
 		FlxG.collide(chochi, furniture);
-
+		
 		if (FlxG.collide(player, next)) {
 			FlxG.switchState(Type.createInstance(nextLevel, []));
 		}
@@ -156,9 +157,20 @@ class LevelCreation extends FlxState {
 		if (FlxG.collide(player, bathroom)) {
 			FlxG.switchState(Type.createInstance(bathroomLevel, []));
 		}
-		if (FlxG.collide(prev, car)) {
+		if(FlxG.collide(car,prev)){
 			car.kill();
+			
 		}
+	
+	}
+
+	override public function update(elapsed:Float) {
+	
+		collision();
+		if (FlxG.keys.anyPressed([ESCAPE])) {
+			openSubState(new OptionsMenu());
+		}
+		super.update(elapsed);
 	}
 
 	override public function update(elapsed:Float) {
